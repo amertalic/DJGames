@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ current_language }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ t("math_challenge") }} - {{ t("kids_learning_games") }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+<body class="game-page math-game">
+    <div class="container">
+        <div class="language-selector">
+            <span>{{ t("language") }}:</span>
+            <a href="/change-language/bs" class="{{ 'active' if current_language == 'bs' else '' }}">{{ t("bosnian") }}</a> |
+            <a href="/change-language/en" class="{{ 'active' if current_language == 'en' else '' }}">{{ t("english") }}</a>
+        </div>
+
+        <header>
+            <h1>{{ t("math_challenge") }}</h1>
+            <p>{{ t("answer_questions", player_name=player_name) }}</p>
+        </header>
+
+        <div class="game-container">
+            <form action="/games/math/submit" method="post" id="mathForm">
+                {% for q in questions %}
+                <div class="question-card" id="question-{{ q.id }}">
+                    <h3>{{ t("question") }} {{ loop.index }}</h3>
+                    <div class="question">{{ q.question }} = ?</div>
+                    <input type="number" name="answers" required>
+                    <input type="hidden" name="correct_answers" value="{{ q.answer }}">
+                </div>
+                {% endfor %}
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">{{ t("check_answers") }}</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="loading" class="loading-container" style="display: none;">
+            <img src="{{ url_for('static', path='/images/loading.gif') }}" alt="Loading" class="loading-gif">
+            <p>{{ t("checking_answers") }}</p>
+        </div>
+
+        <footer>
+            <a href="/games" class="btn-back">{{ t("back_to_games") }}</a>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('mathForm').addEventListener('submit', function() {
+            document.querySelector('.game-container').style.display = 'none';
+            document.getElementById('loading').style.display = 'flex';
+        });
+    </script>
+</body>
+</html>

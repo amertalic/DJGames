@@ -1,0 +1,399 @@
+# static/css/style.css
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+body {
+    background-color: #f0f7ff;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    background-image: url('/static/images/background.png');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    color: #4a6baf;
+}
+
+button, .btn-start, .btn-back, .btn-submit, .btn-action {
+    background-color: #5d9cec;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+button:hover, .btn-start:hover, .btn-back:hover, .btn-submit:hover, .btn-action:hover {
+    background-color: #4a6baf;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* Language Selector */
+.language-selector {
+    text-align: right;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.language-selector a {
+    text-decoration: none;
+    color: #5d9cec;
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+.language-selector a.active {
+    font-weight: bold;
+    color: #4a6baf;
+    background-color: rgba(93, 156, 236, 0.1);
+}
+
+.language-selector a:hover {
+    text-decoration: underline;
+}
+
+/* Landing Page */
+.landing-page header {
+    margin-bottom: 2rem;
+}
+
+.rainbow-text {
+    font-size: 3rem;
+    background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rainbow 5s linear infinite;
+}
+
+@keyframes rainbow {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 1rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.welcome-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.name-form {
+    margin-top: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #4a6baf;
+}
+
+.form-group input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 15px;
+    border: 3px solid #5d9cec;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.leaderboard {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.leaderboard h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.scores-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #5d9cec;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Games List Page */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.game-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+}
+
+.game-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.game-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    font-size: 1.5rem;
+}
+
+.game-card p {
+    padding: 0 1rem 1rem;
+}
+
+.coming-soon {
+    position: relative;
+    opacity: 0.7;
+}
+
+.coming-soon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.5);
+    pointer-events: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Math Game */
+/* Math Game - Kid Friendly Styles */
+.game-container {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 700px;
+    margin: 15px auto;
+    text-align: center;
+}
+
+/* Styling for Each Question */
+.question-card {
+    background-color: #fff3cd; /* Light yellow for fun look */
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    border: 2px solid #ffeeba; /* Fun border color */
+}
+
+.question-card h3 {
+    color: #e67e22;
+    font-size: 1.5rem;
+}
+
+input[type="number"] {
+    width: 80%;
+    max-width: 200px;
+    padding: 10px;
+    font-size: 1.5rem;
+    border: 3px solid #3498db;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #ecf0f1;
+}
+
+/* Math Game - Kid Friendly Styles */
+.game-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Styling for Each Question */
+.question-card {
+    background-color: #b3f0ff; /* Light Sky Blue */
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 5px dashed #00aaff; /* Wavy, Funny Blue Border */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 90px; /* Compact height */
+}
+
+.question-card h3 {
+    color: #0066cc;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px #ffffff;
+}
+
+.question {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #004466;
+    text-shadow: 1px 1px #ffffff;
+    margin-bottom: 8px;
+}
+
+/* Fun Input */
+input[type="number"] {
+    width: 60%;
+    max-width: 120px;
+    padding: 8px;
+    font-size: 1.3rem;
+    border: 4px solid #00aaff;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #e0f7ff;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Submit Button */
+.form-actions {
+    margin-top: 15px;
+}
+
+.btn-submit {
+    background-color: #00cc66;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    border: 3px solid #00994d;
+    animation: wiggle 1s infinite ease-in-out;
+}
+
+.btn-submit:hover {
+    background-color: #00994d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* Fun Wiggle Animation for Button */
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(1deg); }
+    50% { transform: rotate(-1deg); }
+    75% { transform: rotate(1deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
+/* Celebration Card */
+.celebration {
+    background-color: #b3f0ff; /* Light Sky Blue */
+    padding: 20px;
+    margin: 30px auto;
+    border-radius: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border: 5px dashed #00aaff; /* Fun wavy border */
+    animation: bounceIn 1s ease-in-out;
+}
+
+/* Celebration GIF */
+.celebration-image {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* Celebration Text */
+.celebration h3 {
+    color: #0066cc;
+    font-size: 1.6rem;
+    text-shadow: 2px 2px #ffffff;
+    margin-top: 5px;
+}
+
+/* Bounce In Animation */
+@keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}

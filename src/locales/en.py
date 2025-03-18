@@ -1,0 +1,43 @@
+translations = {
+    # General
+    "kids_learning_games": "Kids Learning Games",
+    "welcome_to_fun_learning": "Welcome to Fun Learning!",
+    "play_and_learn": "Play awesome games and learn at the same time!",
+    "whats_your_name": "What's your name?",
+    "lets_play": "Let's Play!",
+    "top_scores": "Top Scores",
+    "player": "Player",
+    "game": "Game",
+    "score": "Score",
+    "no_scores_yet": "No scores yet! Be the first!",
+    "choose_game": "Choose a Game",
+    "back_to_home": "Back to Home",
+    "back_to_games": "Back to Games",
+    "friend": "Friend",
+    # Games
+    "hi_player": "Hi {player_name}! Choose a Game",
+    "math_challenge": "Math Challenge",
+    "test_math_skills": "Test your math skills with fun problems!",
+    "spelling_game": "Spelling Game",
+    "memory_match": "Memory Match",
+    "coming_soon": "Coming Soon!",
+    # Math Game
+    "answer_questions": "Hi {player_name}! Answer these math questions:",
+    "question": "Question",
+    "check_answers": "Check My Answers!",
+    "checking_answers": "Checking your answers...",
+    # Results
+    "your_results": "Your Results",
+    "you_scored": "You scored: {score} points!",
+    "correct_out_of": "You got {correct} out of {total} questions correct!",
+    "awesome_job": "AWESOME JOB!",
+    "great_work": "GREAT WORK!",
+    "keep_practicing": "KEEP PRACTICING!",
+    "play_again": "Play Again",
+    "more_games": "More Games",
+    "home_page": "Home Page",
+    # Language Switcher
+    "language": "Language",
+    "bosnian": "Bosnian",
+    "english": "English",
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="{{ current_language }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ t("your_results") }} - {{ t("kids_learning_games") }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+<body class="results-page">
+    <div class="container">
+        <div class="language-selector">
+            <span>{{ t("language") }}:</span>
+            <a href="/change-language/bs" class="{{ 'active' if current_language == 'bs' else '' }}">{{ t("bosnian") }}</a> |
+            <a href="/change-language/en" class="{{ 'active' if current_language == 'en' else '' }}">{{ t("english") }}</a>
+        </div>
+
+        <header>
+            <h1>{{ t("your_results") }}</h1>
+        </header>
+
+        <div class="results-container">
+
+
+            <div class="celebration">
+                         <div class="score-display">
+                <h2>{{ t("you_scored", score=score) }}</h2>
+                <p>{{ t("correct_out_of", correct=correct, total=total) }}</p>
+            </div>
+                {% if score >= 80 %}
+                <img src="{{ url_for('static', path='/images/thumbs-up.png') }}" alt="Fireworks" class="celebration-image">
+                <h3>{{ t("awesome_job") }}</h3>
+                {% elif score >= 60 %}
+                <img src="{{ url_for('static', path='/images/thumbs-up.png') }}" alt="Stars" class="celebration-image">
+                <h3>{{ t("great_work") }}</h3>
+                {% else %}
+                <img src="{{ url_for('static', path='/images/thumbs-up.png') }}" alt="Thumbs Up" class="celebration-image">
+                <h3>{{ t("keep_practicing") }}</h3>
+                {% endif %}
+            </div>
+
+            <div class="action-buttons">
+                <a href="/games/math" class="btn-action">{{ t("play_again") }}</a>
+                <a href="/games" class="btn-action">{{ t("more_games") }}</a>
+                <a href="/" class="btn-action">{{ t("home_page") }}</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Confetti effect for high scores
+        {% if score >= 80 %}
+        document.addEventListener('DOMContentLoaded', function() {
+            for (let i = 0; i < 100; i++) {
+                createConfetti();
+            }
+        });
+
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            document.body.appendChild(confetti);
+
+            setTimeout(() => {
+                confetti.remove();
+            }, 5000);
+        }
+        {% endif %}
+    </script>
+</body>
+</html>

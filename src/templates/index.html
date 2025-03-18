@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="{{ current_language }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ t("kids_learning_games") }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+<body class="landing-page">
+    <div class="container">
+        <div class="language-selector">
+            <span>{{ t("language") }}:</span>
+            <a href="/change-language/bs" class="{{ 'active' if current_language == 'bs' else '' }}">{{ t("bosnian") }}</a> |
+            <a href="/change-language/en" class="{{ 'active' if current_language == 'en' else '' }}">{{ t("english") }}</a>
+        </div>
+
+        <header>
+            <h1 class="rainbow-text">{{ t("kids_learning_games") }}</h1>
+            <img src="{{ url_for('static', path='/images/hero-kids1.png') }}" alt="Kids Learning" class="hero-image">
+
+        </header>
+
+        <section class="welcome-section">
+            <h2>{{ t("welcome_to_fun_learning") }}</h2>
+            <p>{{ t("play_and_learn") }}</p>
+
+            <form action="/register" method="post" class="name-form">
+                <div class="form-group">
+                    <label for="player_name">{{ t("whats_your_name") }}</label>
+                    <input type="text" id="player_name" name="player_name" required>
+                </div>
+                <button type="submit" class="btn-start">{{ t("lets_play") }}</button>
+            </form>
+        </section>
+
+        <section class="leaderboard">
+            <h2>{{ t("top_scores") }}</h2>
+            <div class="scores-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>{{ t("player") }}</th>
+                            <th>{{ t("game") }}</th>
+                            <th>{{ t("score") }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for player, score in top_scores %}
+                        <tr>
+                            <td>{{ player.name }}</td>
+                            <td>{{ score.game }}</td>
+                            <td>{{ score.score }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="3">{{ t("no_scores_yet") }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

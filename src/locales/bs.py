@@ -1,0 +1,43 @@
+translations = {
+    # General
+    "kids_learning_games": "Dječije Edukativne Igre",
+    "welcome_to_fun_learning": "Dobrodošli u Zabavno Učenje!",
+    "play_and_learn": "Igraj i uči u isto vrijeme!",
+    "whats_your_name": "Kako se zoveš?",
+    "lets_play": "Hajdemo Igrati!",
+    "top_scores": "Najbolji Rezultati",
+    "player": "Igrač",
+    "game": "Igra",
+    "score": "Rezultat",
+    "no_scores_yet": "Još nema rezultata! Budi prvi!",
+    "choose_game": "Izaberi Igru",
+    "back_to_home": "Nazad na Početnu",
+    "back_to_games": "Nazad na Igre",
+    "friend": "Prijatelju",
+    # Games
+    "hi_player": "Hej {player_name}! Izaberi Igru",
+    "math_challenge": "Matematički Genije",
+    "test_math_skills": "Testiraj svoje matematičke vještine sa zabavnim zadacima!",
+    "spelling_game": "Igra Pravopisa",
+    "memory_match": "Memorija",
+    "coming_soon": "Uskoro Dolazi!",
+    # Math Game
+    "answer_questions": "Hej {player_name}! Odgovori na sljedeća pitanja:",
+    "question": "Pitanje",
+    "check_answers": "Provjeri Moje Odgovore!",
+    "checking_answers": "Provjeravanje tvojih odgovora...",
+    # Results
+    "your_results": "Tvoji Rezultati",
+    "you_scored": "Osvojio/la si: {score} bodova!",
+    "correct_out_of": "Tačno si odgovorio/la na {correct} od {total} pitanja!",
+    "awesome_job": "ODLIČAN POSAO!",
+    "great_work": "SJAJAN RAD!",
+    "keep_practicing": "NASTAVI VJEŽBATI!",
+    "play_again": "Igraj Ponovo",
+    "more_games": "Više Igara",
+    "home_page": "Početna Stranica",
+    # Language Switcher
+    "language": "Jezik",
+    "bosnian": "Bosanski",
+    "english": "Engleski",
+}
